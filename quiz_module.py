@@ -5,32 +5,46 @@ import google.generativeai as genai
 
 load_dotenv()
 
+print("API KEY =", os.getenv("GEMINI_API_KEY"))
+
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 
-def generate_quiz(text):
+def generate_quiz(topic, num_questions=5):
+
     prompt = f"""
-    Generate 3 MCQ questions from the following text.
+    Generate {num_questions} multiple choice questions about {topic}.
 
     Return ONLY valid JSON.
 
     Format:
+
     [
       {{
         "question": "...",
-        "options": ["A","B","C","D"],
+        "options": [
+          "A. ...",
+          "B. ...",
+          "C. ...",
+          "D. ..."
+        ],
         "answer": "..."
       }}
     ]
-
-    Text:
-    {text}
     """
 
     try:
         response = model.generate_content(prompt)
-        cleaned = response.text.replace("```json", "").replace("```", "")
+
+        cleaned = (
+            response.text
+            .replace("```json", "")
+            .replace("```", "")
+            .strip()
+        )
+
         return json.loads(cleaned)
 
     except Exception as e:

@@ -1,3 +1,6 @@
+from fastapi import Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from explanation_module import explain_topic
 from quiz_module import generate_quiz
 from learning_path import get_learning_recommendations
@@ -10,20 +13,15 @@ app = FastAPI(
     description="AI Powered Educational Learning Assistant using Gemini and LaMini-Flan-T5",
     version="1.0.0"
 )
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
+templates = Jinja2Templates(directory="templates")
 @app.get("/")
-def home():
-    return {
-        "project": "EduGenie",
-        "status": "Active",
-        "modules": [
-            "Q&A",
-            "Explanation",
-            "Quiz",
-            "Summary",
-            "Learning Path"
-        ]
-    }
+async def home(request: Request):
+   return templates.TemplateResponse(
+    request=request,
+    name="index.html"
+)
 class QuestionRequest(BaseModel):
     question: str
 class SummaryRequest(BaseModel):

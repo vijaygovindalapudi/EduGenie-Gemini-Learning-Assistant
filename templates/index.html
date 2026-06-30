@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EduGenie — AI Powered Educational Learning Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">✦</span>
+        <div class="brand-text">
+          <span class="brand-name">EduGenie</span>
+          <span class="brand-tag">Learning Assistant</span>
+        </div>
+      </div>
+
+      <nav class="module-nav" id="moduleNav">
+        <button class="module-btn active" data-module="qa">
+          <span class="module-icon">◐</span>
+          <span class="module-label">Ask a Question</span>
+        </button>
+        <button class="module-btn" data-module="explain">
+          <span class="module-icon">◑</span>
+          <span class="module-label">Explain a Concept</span>
+        </button>
+        <button class="module-btn" data-module="quiz">
+          <span class="module-icon">◒</span>
+          <span class="module-label">Generate Quiz</span>
+        </button>
+        <button class="module-btn" data-module="summary">
+          <span class="module-icon">◓</span>
+          <span class="module-label">Summarize Text</span>
+        </button>
+        <button class="module-btn" data-module="learning-path">
+          <span class="module-icon">◍</span>
+          <span class="module-label">Learning Path</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Powered by Google Gemini</p>
+      </div>
+    </aside>
+
+    <!-- Main workspace -->
+    <main class="workspace">
+
+      <header class="workspace-header">
+        <div>
+          <p class="eyebrow" id="moduleEyebrow">Module 01 · Q&amp;A</p>
+          <h1 id="moduleTitle">Ask a Question</h1>
+          <p class="module-desc" id="moduleDesc">Ask EduGenie anything about your syllabus and get a clear, sourced-style answer.</p>
+        </div>
+        <div class="status-pill" id="statusPill">
+          <span class="status-dot"></span>
+          <span id="statusText">Ready</span>
+        </div>
+      </header>
+
+      <section class="panel">
+        <form id="genieForm" class="genie-form">
+
+          <!-- Dynamic input area, rebuilt per module by JS -->
+          <div id="dynamicFields" class="dynamic-fields"></div>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <span class="btn-label">Get Answer</span>
+              <span class="btn-spark">✦</span>
+            </button>
+            <button type="button" class="clear-btn" id="clearBtn">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel output-panel">
+        <div class="output-header">
+          <h2>Output</h2>
+          <button class="copy-btn" id="copyBtn" title="Copy result">Copy</button>
+        </div>
+
+        <div class="output-body" id="outputBody">
+          <div class="empty-state" id="emptyState">
+            <span class="empty-mark">✦</span>
+            <p>Your result will appear here once you submit a request.</p>
+          </div>
+
+          <div class="loading-state hidden" id="loadingState">
+            <div class="spinner"></div>
+            <p id="loadingText">Genie is thinking…</p>
+          </div>
+
+          <div class="error-state hidden" id="errorState">
+            <strong>Something went wrong.</strong>
+            <p id="errorMessage">Please try again.</p>
+          </div>
+
+          <div class="result-state hidden" id="resultState">
+            <pre id="resultContent"></pre>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', path='js/app.js') }}"></script>
+</body>
+</html>
