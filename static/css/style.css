@@ -381,3 +381,27 @@ html, body {
   .submit-btn, .clear-btn { width: 100%; justify-content: center; }
   .form-actions { flex-direction: column; align-items: stretch; }
 }
+footer {
+    margin-top: 40px;
+    padding: 30px;
+
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+
+    border-top: 1px solid #4f46e5;
+
+    text-align: center;
+    color: #e2e8f0;
+
+    box-shadow: 0 0 25px rgba(99,102,241,0.4);
+}
+
+footer strong {
+    color: #60a5fa;
+    font-size: 1.3rem;
+}
+
+footer p:nth-child(2) {
+    color: #fbbf24;
+    font-weight: 600;
+}
