@@ -60,6 +60,8 @@ def explain(request: ExplanationRequest):
     result = explain_topic(request.topic)
 
     return {"explanation": result}
-    @app.get("/healthz")
+
+
+@app.get("/healthz")
 def healthz():
     return {"status": "ok"}
