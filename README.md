@@ -17,3 +17,22 @@ Tech Stack
 - HTML
 - CSS
 - JavaScript
+## Developer
+
+Built and Developed by
+
+**G. Vijaya Nooka Raju**  
+B.Tech – Internet of Things (IoT)  
+Aditya College of Engineering and Technology
+
+## Credits
+
+- Frontend: HTML, CSS, JavaScript
+- Backend: FastAPI (Python)
+- AI: Google Gemini API
+- Deployment: Render
+- Version Control: GitHub
+
+## Copyright
+
+© 2026 G. Vijaya Nooka Raju. All Rights Reserved.
