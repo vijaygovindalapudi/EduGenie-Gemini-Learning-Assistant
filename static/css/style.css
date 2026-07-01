@@ -406,3 +406,16 @@ html, body {
     color: #ffd700;
     font-size: 1.2rem;
 }
+.app-footer a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.app-footer a:hover{
+    text-decoration: underline;
+}
+
+.app-footer{
+    line-height: 1.7;
+}
