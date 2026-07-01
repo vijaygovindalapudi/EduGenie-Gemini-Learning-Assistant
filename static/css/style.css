@@ -381,3 +381,77 @@ html, body {
   .submit-btn, .clear-btn { width: 100%; justify-content: center; }
   .form-actions { flex-direction: column; align-items: stretch; }
 }
+.app-footer{
+    margin-top: 40px;
+    padding: 30px;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #1e293b,
+        #0f172a
+    );
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+
+    color: white;
+}
+
+.app-footer h3{
+    margin-bottom: 10px;
+    color: #f8fafc;
+}
+
+.footer-tagline{
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+.team-section h4{
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.team-members{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.team-members span{
+    background: rgba(255,255,255,0.08);
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+
+.college{
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.app-footer a{
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+.app-footer a:hover{
+    text-decoration: underline;
+}
+
+.footer-bottom{
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #94a3b8;
+    font-size: 14px;
+}
+<p>
+    💻
+    <a href="https://github.com/vijaygovindalapudi/EduGenie-Gemini-Learning-Assistant"
+       target="_blank">
+       GitHub Repository
+    </a>
+</p>

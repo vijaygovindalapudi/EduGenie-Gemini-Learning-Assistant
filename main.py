@@ -52,11 +52,13 @@ def learning_path(request: LearningPathRequest):
 def quiz(request: QuizRequest):
 
     result = generate_quiz(request.text)
-
     return {"quiz": result}
 @app.post("/explain")
 def explain(request: ExplanationRequest):
-
     result = explain_topic(request.topic)
-
     return {"explanation": result}
+
+
+@app.get("/healthz")
+def healthz():
+    return {"status": "ok"}
